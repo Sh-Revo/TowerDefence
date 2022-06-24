@@ -51,7 +51,6 @@ public class CannonTower : MonoBehaviour
         Bullet bullet = bulletGO.GetComponent<Bullet>();
         if (bullet != null)
             bullet.Chase(target);
-        Debug.Log("shoot");
     }
 
     void UpdateTarget()
