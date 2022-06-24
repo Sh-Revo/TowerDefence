@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 844423614138271643}
   m_Layer: 0
-  m_Name: FirePoint
+  m_Name: FirePointCannon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23,12 +23,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1773400268357966704}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4, y: 15, z: 0}
+  m_LocalRotation: {x: -0, y: -0.7056297, z: -0, w: 0.70858085}
+  m_LocalPosition: {x: 0.01669383, y: 2.33, z: 3.9999657}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1491650069221499049}
-  m_RootOrder: 5
+  m_Father: {fileID: 7961688810434064761}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3126656543926818404
 GameObject:
@@ -63,7 +63,6 @@ Transform:
   - {fileID: 1863011419266423833}
   - {fileID: 7961688810434064761}
   - {fileID: 6830104351378908021}
-  - {fileID: 844423614138271643}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
@@ -79,8 +78,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46711988eac69f24ea8d7a4901a8e80b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 6
-  fireRate: 2
+  range: 7
+  fireRate: 0.25
   partToRotate: {fileID: 7961688810434064761}
   enemyTag: Enemy
   turnSpeed: 10
@@ -433,6 +432,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4970583067597046422}
+  - {fileID: 844423614138271643}
   m_Father: {fileID: 1491650069221499049}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 89.761, z: 0}

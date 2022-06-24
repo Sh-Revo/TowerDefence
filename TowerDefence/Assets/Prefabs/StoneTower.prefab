@@ -30,6 +30,7 @@ Transform:
   m_Children:
   - {fileID: 328676911105042253}
   - {fileID: 328676911104927937}
+  - {fileID: 3964685410696020094}
   m_Father: {fileID: 328676911105033499}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -298,6 +299,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 328676911105033499}
+  - component: {fileID: 2296952260359733071}
   m_Layer: 0
   m_Name: StoneTower
   m_TagString: Untagged
@@ -321,6 +323,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!114 &2296952260359733071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 328676911105208989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46711988eac69f24ea8d7a4901a8e80b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  range: 10
+  fireRate: 1
+  partToRotate: {fileID: 328676911104928501}
+  enemyTag: Enemy
+  turnSpeed: 10
+  bulletPrefab: {fileID: 2764730799399893688, guid: 9f951fdb38d84ee4f9e92b27f1841e1e,
+    type: 3}
+  firePoint: {fileID: 3964685410696020094}
 --- !u!1 &328676911105240891
 GameObject:
   m_ObjectHideFlags: 0
@@ -532,3 +554,33 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!1 &2827915559572258758
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3964685410696020094}
+  m_Layer: 0
+  m_Name: FirePointStoneTower
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3964685410696020094
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2827915559572258758}
+  m_LocalRotation: {x: -0, y: 0.006219854, z: -0, w: 0.9999807}
+  m_LocalPosition: {x: -0.0029125847, y: 1.5409994, z: 2.7402494}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 328676911104928501}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

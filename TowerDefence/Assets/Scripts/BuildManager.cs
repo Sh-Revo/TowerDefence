@@ -5,8 +5,8 @@ using UnityEngine;
 public class BuildManager : MonoBehaviour
 {
     public static BuildManager instance;
-    public GameObject standartTurretPrefab;
-    //public GameObject anotherTurretPrefab;
+    public GameObject cannonTurretPrefab;
+    public GameObject stoneTurretPrefab;
 
     private GameObject turretToBuild;
 
