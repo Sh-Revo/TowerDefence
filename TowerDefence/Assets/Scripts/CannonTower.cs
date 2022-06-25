@@ -5,6 +5,7 @@ using UnityEngine;
 public class CannonTower : MonoBehaviour
 {
     private Transform target;
+    private Enemy targetEnemy;
     [Header("General")]
     public float range = 6f;
 
@@ -15,6 +16,10 @@ public class CannonTower : MonoBehaviour
     [Header("Use Laser")]
     public bool useLaser = false;
     public LineRenderer lineRenderer;
+    public ParticleSystem impactEffect;
+    public Light impactLight;
+    public int damageOverTime = 30;
+    public float slowAmount = .5f;
 
     [Header("Setup")]
     public Transform partToRotate;   
@@ -40,6 +45,8 @@ public class CannonTower : MonoBehaviour
             {
                 if (lineRenderer.enabled)
                 {
+                    impactEffect.Stop();
+                    impactLight.enabled = false;
                     lineRenderer.enabled = false;
                 }
             }
@@ -74,12 +81,21 @@ public class CannonTower : MonoBehaviour
 
     void Laser()
     {
+        targetEnemy.TakeDamage(damageOverTime * Time.deltaTime);
+        targetEnemy.Slow(slowAmount);
+
         if (!lineRenderer.enabled)
         {
             lineRenderer.enabled = true;
+            impactEffect.Play();
+            impactLight.enabled = true;
         }
         lineRenderer.SetPosition(0, firePoint.position);
         lineRenderer.SetPosition(1, target.position);
+        Vector3 direction = firePoint.position - target.position;
+        impactEffect.transform.position = target.position + direction.normalized;
+        impactEffect.transform.rotation = Quaternion.LookRotation(direction);
+        
     }
 
     void Shoot()
@@ -107,6 +123,7 @@ public class CannonTower : MonoBehaviour
         if (nearestEnemy != null && shortestDistance <= range)
         {
             target = nearestEnemy.transform;
+            targetEnemy = nearestEnemy.GetComponent<Enemy>();
         }
         else
         {
