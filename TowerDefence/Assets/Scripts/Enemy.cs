@@ -5,6 +5,9 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public float speed = 10f;
+    public int health = 100;
+    public int moneyValue = 50;
+    public GameObject deathEffect;
 
     private Transform _target;
     private int _wayPointIndex = 0;
@@ -25,15 +28,40 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    public void TakeDamage(int amount)
+    {
+        health -= amount;
+        if (health <= 0)
+        {
+            Die();
+        }
+    }
+
+    void Die()
+    {
+        PlayerStats.money += moneyValue;
+        GameObject effect = (GameObject)Instantiate(deathEffect, transform.position, Quaternion.identity);
+        Destroy(effect, 3f);
+        Destroy(gameObject);
+    }
+
+
     void GetNextWayPoint()
     {
         if (_wayPointIndex >= Waypoints.points.Length - 1)
         {
-            Destroy(gameObject);
+            EndPath();
             return;
         }
 
         _wayPointIndex++;
         _target = Waypoints.points[_wayPointIndex];
+    }
+
+    void EndPath()
+    {
+
+        PlayerStats.lives--;
+        Destroy(gameObject);
     }
 }
