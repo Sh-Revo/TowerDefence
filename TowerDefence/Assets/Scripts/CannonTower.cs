@@ -45,9 +45,9 @@ public class CannonTower : MonoBehaviour
             {
                 if (lineRenderer.enabled)
                 {
+                    lineRenderer.enabled = false;
                     impactEffect.Stop();
                     impactLight.enabled = false;
-                    lineRenderer.enabled = false;
                 }
             }
             return;

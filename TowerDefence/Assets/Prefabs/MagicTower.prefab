@@ -168,6 +168,8 @@ MonoBehaviour:
   lineRenderer: {fileID: 5935813715106730532}
   impactEffect: {fileID: 4175409552058668931}
   impactLight: {fileID: 2515625736629472954}
+  damageOverTime: 30
+  slowAmount: 0.5
   partToRotate: {fileID: 4944327765796652605}
   enemyTag: Enemy
   turnSpeed: 10
@@ -730,17 +732,17 @@ PrefabInstance:
     - target: {fileID: 5178698838113567842, guid: 1b911085433df744c8585b1536b8dd2f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 15
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5178698838113567842, guid: 1b911085433df744c8585b1536b8dd2f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.25
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5178698838113567842, guid: 1b911085433df744c8585b1536b8dd2f,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5178698838113567842, guid: 1b911085433df744c8585b1536b8dd2f,
         type: 3}

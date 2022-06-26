@@ -17,7 +17,7 @@ public class PauseGame : MonoBehaviour
     public void Toggle()
     {
         ui.SetActive(!ui.activeSelf);
-        if (ui.active)
+        if (ui.activeSelf)
         {
             Time.timeScale = 0f;
         }
