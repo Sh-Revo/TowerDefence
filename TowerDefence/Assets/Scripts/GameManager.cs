@@ -6,6 +6,11 @@ public class GameManager : MonoBehaviour
 {
     public static bool gameIsOver;
     public GameObject gameOverUI;
+    public GameObject completeLevelUI;
+    //public string nextLevel;
+    //public int levelToUnclock = 2;
+
+    //public SceneFader sceneFader;
 
     private void Start()
     {
@@ -33,5 +38,13 @@ public class GameManager : MonoBehaviour
     {
         gameIsOver = true;
         gameOverUI.SetActive(true);
+    }
+
+    public void WinLevel()
+    {
+        //PlayerPrefs.SetInt("levelReach", 2);
+        //sceneFader.FadeTo(nextLevel);
+        gameIsOver = true;
+        completeLevelUI.SetActive(true);
     }
 }
