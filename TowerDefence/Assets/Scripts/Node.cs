@@ -9,8 +9,12 @@ public class Node : MonoBehaviour
     public Color notEnoughMoneyColor;
     public Vector3 positionOffset;
 
-    [Header("Optional")]
+    [HideInInspector]
     public GameObject turret;
+    [HideInInspector]
+    public TurretBlueprint turretBlueprint;
+    [HideInInspector]
+    public bool isUpgraded = false;
     private Renderer rend;
     private Color startColor;
     
@@ -21,6 +25,22 @@ public class Node : MonoBehaviour
         rend = GetComponent<Renderer>();
         startColor = rend.material.color;
         buildManager = BuildManager.instance;
+    }
+
+    void BuildTurret(TurretBlueprint blueprint)
+    {
+        if (PlayerStats.money < blueprint.cost)
+        {
+            Debug.Log("Not enougt money");
+            return;
+        }
+        PlayerStats.money -= blueprint.cost;
+        GameObject _turret = (GameObject)Instantiate(blueprint.prefab, GetBuildPosition(), Quaternion.identity);
+        turret = _turret;
+        turretBlueprint = blueprint;
+        GameObject effect = (GameObject)Instantiate(buildManager.buildEffect, GetBuildPosition(), Quaternion.identity);
+        Destroy(effect, 3f);
+
     }
 
     private void OnMouseEnter()
@@ -64,11 +84,27 @@ public class Node : MonoBehaviour
         {
             return;
         }
-        buildManager.BuildTurretOn(this);
+        BuildTurret(buildManager.GetTurretToBuild());
     }
     private void OnMouseExit()
     {
         rend.material.color = startColor;
+    }
+
+    public void UpgradeTurret()
+    {
+        if (PlayerStats.money < turretBlueprint.upgradeCost)
+        {
+            Debug.Log("Not enougt money to upgrade");
+            return;
+        }
+        PlayerStats.money -= turretBlueprint.upgradeCost;
+        Destroy(turret);
+        GameObject _turret = (GameObject)Instantiate(turretBlueprint.upgradedPrefab, GetBuildPosition(), Quaternion.identity);
+        turret = _turret;
+        GameObject effect = (GameObject)Instantiate(buildManager.buildEffect, GetBuildPosition(), Quaternion.identity);
+        Destroy(effect, 3f);
+        isUpgraded = true;
     }
 
 }
