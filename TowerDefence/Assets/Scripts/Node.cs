@@ -107,4 +107,12 @@ public class Node : MonoBehaviour
         isUpgraded = true;
     }
 
+    public void SellTurret()
+    {
+        PlayerStats.money += turretBlueprint.GetSellAmount();
+        Destroy(turret);
+        GameObject effect = (GameObject)Instantiate(buildManager.sellEffect, GetBuildPosition(), Quaternion.identity);
+        Destroy(effect, 3f);
+        turretBlueprint = null;
+    }
 }

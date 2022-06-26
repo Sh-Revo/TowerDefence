@@ -8078,6 +8078,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildEffect: {fileID: 8265615142241952878, guid: 7f19c51bf8d9d484285af0392c24b2f5,
     type: 3}
+  sellEffect: {fileID: 7209087194798328389, guid: d68a84d0262897f42889089e6deaffbc,
+    type: 3}
   nodeUI: {fileID: 1267150866}
 --- !u!114 &738068128
 MonoBehaviour:
@@ -13005,6 +13007,7 @@ MonoBehaviour:
   ui: {fileID: 120150449}
   upgradedCost: {fileID: 460610520}
   upgradeButton: {fileID: 311356709}
+  sellAmount: {fileID: 1892372058}
 --- !u!1001 &1269916335
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17946,7 +17949,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1679322959}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1267150866}
+        m_MethodName: Sell
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1679322959
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20432,7 +20446,7 @@ GameObject:
   - component: {fileID: 1892372059}
   - component: {fileID: 1892372058}
   m_Layer: 0
-  m_Name: Cost
+  m_Name: Amount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

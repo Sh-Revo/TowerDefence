@@ -8,6 +8,7 @@ public class NodeUI : MonoBehaviour
     public GameObject ui;
     public Text upgradedCost;
     public Button upgradeButton;
+    public Text sellAmount;
     private Node _target;
 
     public void SetTarget(Node target)
@@ -24,7 +25,7 @@ public class NodeUI : MonoBehaviour
             upgradedCost.text = "Done";
             upgradeButton.interactable = false;
         }
-        
+        sellAmount.text = "$" + target.turretBlueprint.GetSellAmount();
         ui.SetActive(true);
     }
 
@@ -36,6 +37,12 @@ public class NodeUI : MonoBehaviour
     public void Upgrade()
     {
         _target.UpgradeTurret();
+        BuildManager.instance.DeselectNode();
+    }
+
+    public void Sell()
+    {
+        _target.SellTurret();
         BuildManager.instance.DeselectNode();
     }
 }
