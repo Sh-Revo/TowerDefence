@@ -1719,13 +1719,14 @@ GameObject:
   m_Component:
   - component: {fileID: 214745303}
   - component: {fileID: 214745304}
+  - component: {fileID: 214745305}
   m_Layer: 5
   m_Name: CompleteLevel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &214745303
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1769,6 +1770,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &214745305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 214745302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c955c398bb440c43b4b67487a622590, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menuSceneName: MainMenu
+  sceneFader: {fileID: 224555194}
 --- !u!114 &224555194 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8508798762795219570, guid: 8fc2793b23173664c8719ec3ca0b26de,
@@ -6642,7 +6657,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3eec32d94774ece4b91a8ecfe4f5ca9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roundsText: {fileID: 479917686}
   sceneFader: {fileID: 224555194}
   menuSceneMenu: MainMenu
 --- !u!95 &627383920
@@ -8484,7 +8498,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverUI: {fileID: 627383917}
-  sceneFader: {fileID: 224555194}
+  completeLevelUI: {fileID: 214745302}
 --- !u!114 &738068130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9975,7 +9989,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 214745305}
         m_MethodName: Menu
         m_Mode: 1
         m_Arguments:
@@ -10401,7 +10415,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 875348858}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
@@ -11501,6 +11515,7 @@ GameObject:
   - component: {fileID: 983935890}
   - component: {fileID: 983935889}
   - component: {fileID: 983935888}
+  - component: {fileID: 983935891}
   m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
@@ -11576,6 +11591,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 983935886}
   m_CullTransparentMesh: 0
+--- !u!114 &983935891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 983935886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c955c398bb440c43b4b67487a622590, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menuSceneName: MainMenu
+  sceneFader: {fileID: 0}
 --- !u!1001 &987894407
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21586,7 +21615,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1850526893
 RectTransform:
   m_ObjectHideFlags: 0
